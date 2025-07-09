@@ -22,3 +22,14 @@ CREATE TABLE employe (
     conges_cumules_par_mois DOUBLE PRECISION,
     solde_conge DOUBLE PRECISION
 );
+
+CREATE TABLE conge (
+    id_conge SERIAL PRIMARY KEY,
+    id_employe INTEGER,
+    date_debut DATE,
+    date_fin DATE,
+    nombre_jours DOUBLE PRECISION,
+    type VARCHAR(255),
+    statut VARCHAR(255),
+    FOREIGN KEY (id_employe) REFERENCES employe(id_employe)
+);
