@@ -3,16 +3,18 @@ package com.cartaxaudit.gestionPaie.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "employe")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
