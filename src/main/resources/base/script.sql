@@ -1,3 +1,6 @@
+\c postgres;
+DROP DATABASE gestion_paie;
+
 CREATE DATABASE gestion_paie;
 \c gestion_paie;
 
