@@ -12,14 +12,14 @@ import java.util.List;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(path = "employe")
+@RequestMapping(path = "employes")
 @AllArgsConstructor
 public class EmployeController {
     private EmployeService employeService;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> add(@RequestBody Employe employe) {
-        employeService.add(employe);
+    public ResponseEntity<?> create(@RequestBody Employe employe) {
+        employeService.create(employe);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
@@ -34,4 +34,9 @@ public class EmployeController {
         Employe employe = employeService.get(id);
         return ResponseEntity.ok(employe);
     }
+
+//    @PostMapping("{id}/conges")
+//    public ResponseEntity<?> addCongeToEmploye(@PathVariable int id, ) {
+//
+//    }
 }

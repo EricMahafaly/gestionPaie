@@ -13,7 +13,7 @@ import java.util.Optional;
 public class EmployeService {
     private EmployeRepository employeRepository;
 
-    public void add(Employe employe) {
+    public void create(Employe employe) {
         employeRepository.save(employe);
     }
 
