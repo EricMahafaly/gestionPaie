@@ -5,6 +5,26 @@ CREATE DATABASE gestion_paie;
 \c gestion_paie;
 
 
+create table utilisateur(
+    id serial primary key,
+    id_employe INTEGER,
+    nom VARCHAR(255),
+    prenom VARCHAR(255),
+    nom_utilisateur VARCHAR(255),
+    mot_de_passe VARCHAR(255),--hashed
+    actif BOOLEAN,
+    role VARCHAR(255)-- admin, user, etc.
+);
+
+CREATE TABLE jwt (
+    id SERIAL PRIMARY KEY,
+    valeur VARCHAR(255),
+    desactive BOOLEAN,
+    expire BOOLEAN,
+    id_utilisateur INTEGER,
+    FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id)
+);
+
 CREATE TABLE employe (
     id_employe SERIAL PRIMARY KEY,
     nom VARCHAR(255),

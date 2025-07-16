@@ -8,4 +8,8 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CongeService {
     private CongeRepository congeRepository;
+
+    public void faireDemandeConge() {
+
+    }
 }
